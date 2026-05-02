@@ -129,10 +129,6 @@ public class Game_2 : MonoBehaviour
                 winning_text.text = "Ничья!";
         }
 
-        Invoke("GoToMenu", 1.5f);
-    }
-    void GoToMenu()
-    {
-        SceneManager.LoadScene("start");
+        manager.variable.RestartSceneAfterDelay(2f);
     }
 }

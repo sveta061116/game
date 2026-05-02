@@ -159,11 +159,6 @@ public class Game : MonoBehaviour
                 winning_text.text = "Ничья!";
         }
 
-        Invoke("RestartGame", 2f);
-    }
-
-    void RestartGame()
-    {
-        SceneManager.LoadScene("start");
+        manager.variable.RestartSceneAfterDelay(2f);
     }
 }
