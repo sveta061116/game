@@ -56,9 +56,4 @@ public class manager : MonoBehaviour
         isLoading = false;
     }
 
-    public void GoToStart()
-    {
-        current = Gametype.With_friend;
-        SceneManager.LoadScene("start");
-    }
 }
