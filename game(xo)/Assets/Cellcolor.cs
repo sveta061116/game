@@ -33,10 +33,7 @@ public class Cellcolor : MonoBehaviour
         xo.sprite = x_now ? cross : zero;
         Clicked_Now = true;
 
-        if (Game.instance != null)
-        {
-            Game.instance.xo_moves[number] = x_now ? 1 : 2;
-            Game.instance.Win();
-        }
+        Game.instance.xo_moves[number] = x_now ? 1 : 2;
+        Game.instance.Win();
     }
 }
