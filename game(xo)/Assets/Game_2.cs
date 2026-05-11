@@ -9,7 +9,7 @@ public class Game_2 : MonoBehaviour
 
     public TextMeshProUGUI winning_text;
 
-    public money money_Script;
+    public money money_Script; //Скрипт монетки
    
     public bool playerX = true;
 
@@ -20,7 +20,7 @@ public class Game_2 : MonoBehaviour
     public bool game_Over = false;
 
     
-    public enum TurnState
+    public enum TurnState //Состояния монетки
     {
         Normal,        
         Choose_Action,  
@@ -28,10 +28,10 @@ public class Game_2 : MonoBehaviour
         Forced_Move     
     }
 
-    public TurnState current_State = TurnState.Normal;
+    public TurnState current_State = TurnState.Normal;//Текущее состояние игры
 
    
-    public bool forcedX;
+    public bool forcedX;//Фигура после броска монетки
 
     void Start()
     {
@@ -59,12 +59,12 @@ public class Game_2 : MonoBehaviour
     }
 
     
-    public void Choose_Delete()
+    public void Choose_Delete()//Игрок выбрал удалить фигуру
     {
         current_State = TurnState.Delete_Mode;
     }
  
-    public void Choose_Coin()
+    public void Choose_Coin()//Игрок выбрал бросить монетку
     {
         bool v = Random.value > 0.5f;
         forcedX = v;

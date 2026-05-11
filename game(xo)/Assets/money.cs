@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class money : MonoBehaviour
 {
-    public Image money_xo;
+    public Image money_xo; //спрайты монетки
     public Sprite money_x;
     public Sprite money_0;
     public Sprite money_null;
@@ -15,7 +15,7 @@ public class money : MonoBehaviour
         money_xo.sprite = money_null;
         text.text = "";
     }
-    public void SetCoin(bool isX)
+    public void SetCoin(bool isX) //Смена состояния монетки
     {
         if (isX)
         {
@@ -28,7 +28,7 @@ public class money : MonoBehaviour
             text.text = "ставь нолик";
         }
     }
-    public void Hide()
+    public void Hide() //Обнуление состояния монетки
     {
         money_xo.sprite = money_null;
         text.text = "";

@@ -4,28 +4,28 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public static Game instance;
+    public static Game instance; //Глобальный доступ к переменной класса
 
-    public bool playerX = true;
-    public bool playerNow = true;
+    public bool playerX = true; //Выбор фигуры игрока
+    public bool playerNow = true; //Ход игрока
 
-    public int[] xo_moves = new int[9];
+    public int[] xo_moves = new int[9]; //Массив ходов
 
-    public TextMeshProUGUI winning_text;
+    public TextMeshProUGUI winning_text; //Текст о выигрыше
 
-    public bool game_Over = false;
+    public bool game_Over = false; //Окончание игры
 
     void Awake()
     {
         instance = this;
     }
 
-    void Start()
+    void Start() 
     {
-        ResetGame();
+        ResetGame(); 
     }
 
-    public void ResetGame()
+    public void ResetGame() //Обнуление прогресса
     {
         game_Over = false;
         playerNow = true;
@@ -49,7 +49,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    public void PlayerX()
+    public void PlayerX() //Флаг того, что игрок выбрал играть за X
     {
         if (instance == null)
         {
@@ -66,7 +66,7 @@ public class Game : MonoBehaviour
      
     }
 
-    public void PlayerO()
+    public void PlayerO()//Флаг того, что игрок выбрал играть за 0
     {
         playerX = false;
         playerNow = false;
@@ -78,7 +78,7 @@ public class Game : MonoBehaviour
         Computer_Move();
     }
 
-    public void End_Move()
+    public void End_Move() //Передача информации о конце хода
     {
         playerNow = !playerNow;
 
@@ -86,7 +86,7 @@ public class Game : MonoBehaviour
             Computer_Move();
     }
 
-    void Computer_Move()
+    void Computer_Move() //Ход ПК
     {
         if (game_Over) return;
 
@@ -106,7 +106,7 @@ public class Game : MonoBehaviour
         playerNow = true;
     }
 
-    public void Win()
+    public void Win() //Проверка выигрышной комбинации
     {
         int[,] winCombos =
         {
@@ -144,7 +144,7 @@ public class Game : MonoBehaviour
             EndGame(0);
     }
 
-    public void EndGame(int winner)
+    public void EndGame(int winner) //Вывод оповещения о победе
     {
         game_Over = true;
         playerNow = false;

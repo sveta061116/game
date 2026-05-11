@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class Cellcolor : MonoBehaviour
 {
-    public Image xo;
+    public Image xo; //Спрайт клетки
     public Sprite cross;
     public Sprite zero;
 
-    public bool Clicked_Now = false;
-    public int number;
+    public bool Clicked_Now = false;//Нажата ли клетка
+    public int number; //Номер клетки
 
-    public void OnClick()
+    public void OnClick() //Нажатие игрока на клетку
     {
         if (Game.instance == null) return;
         if (Game.instance.game_Over) return;
@@ -20,13 +20,12 @@ public class Cellcolor : MonoBehaviour
         Game.instance.End_Move();
     }
 
-    public void Mark(bool x_now)
+    public void Mark(bool x_now)//Появление фигуры в клетки, запись в массив ходов
     {
         if (Clicked_Now) return;
 
         if (xo == null)
         {
- 
             return;
         }
 
