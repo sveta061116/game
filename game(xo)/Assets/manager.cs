@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using System.Collections;//корутины
 
 public enum Gametype  //Режимы игры
 {
